@@ -58,6 +58,3 @@ The script uses the following Python libraries:
 This project is licensed under the MIT License.
 
 
-## Issues
-If you encounter any issues, please open a ticket in the GitHub repository.
-
