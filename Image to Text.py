@@ -7,7 +7,7 @@ from tkinter import filedialog, messagebox, ttk
 import re
 
 # Set Tesseract OCR path
-pytesseract.pytesseract.tesseract_cmd = r"C:\\Users\\Hamza\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:\\Users\\(yourusername)\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
 
 def preprocess_image(image):
     """Enhanced image preprocessing for better OCR results"""
