@@ -47,6 +47,8 @@ The script uses the following Python libraries:
 - `pandas`
 - `tkinter`
 - `re`
+- 
+## Install all required libraries.
 
 ## How It Works
 1. The script loads and preprocesses images (grayscale conversion, noise reduction, contrast enhancement, thresholding).
