@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import re
 
-# Set Tesseract OCR path
+
 pytesseract.pytesseract.tesseract_cmd = r"C:\\Users\\(yourusername)\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
 
 def preprocess_image(image):
@@ -19,7 +19,7 @@ def preprocess_image(image):
     enhancer = ImageEnhance.Contrast(image)
     image = enhancer.enhance(2.5)
 
-    # Binarization (thresholding) to remove background noise
+
     image = image.point(lambda x: 0 if x < 150 else 255)
 
     return image
@@ -47,7 +47,7 @@ def extract_text_from_images(folder_path, output_excel, progress_bar, progress_l
             with Image.open(file_path) as img:
                 processed_img = preprocess_image(img)
                 
-                # Using a better OCR mode
+          
                 extracted_text = pytesseract.image_to_string(processed_img, config="--psm 4 --oem 3")
 
                 cleaned_text = clean_text(extracted_text)
@@ -68,7 +68,7 @@ def extract_text_from_images(folder_path, output_excel, progress_bar, progress_l
 
     progress_label.config(text="OCR complete!")
 
-# GUI Functions
+
 def select_folder():
     folder_path = filedialog.askdirectory()
     folder_entry.delete(0, tk.END)
@@ -91,12 +91,12 @@ def run_script():
     progress_label.config(text="Starting...")
     extract_text_from_images(folder_path, output_excel, progress_bar, progress_label)
 
-# GUI Setup
+# GUISetup
 root = tk.Tk()
 root.title("Advanced OCR Text Extractor")
 root.geometry("650x450")
 
-# GUI Components
+# GUI Component
 tk.Label(root, text="Image Folder:").grid(row=0, column=0, padx=10, pady=10, sticky='e')
 folder_entry = tk.Entry(root, width=50)
 folder_entry.grid(row=0, column=1, padx=10, pady=10)
